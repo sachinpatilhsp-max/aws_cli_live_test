@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: "Innocent looking Serverless Application"
+
+Resources:
+  MyFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      # यह लाइन AWS CLI को 'src' फोल्डर को zip करने के लिए मजबूर करती है
+      CodeUri: ./src/
+      Handler: index.handler
+      Runtime: python3.9
